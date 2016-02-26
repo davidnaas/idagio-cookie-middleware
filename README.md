@@ -1,4 +1,4 @@
-# idagio-cookie-middleware
+# @IDAGIO/cookie-middleware
 
 Middleware for dealing with the parsing and serialization of cookies for Node.js / Express.js
 
@@ -10,7 +10,7 @@ This middleware is very simplistic: It does exactly what it says on the tin – 
 
 For the above things, you should write a module that does what you need, handling asynchronicity as it arises: don't try to make something asynchronous look synchronous.
 
-At IDAGIO, we've use two modules that deal with session management & authentication. Only one is open-source, because the other contains way too much application specific code to be made generic.
+At IDAGIO, we use two modules that deal with session management & authentication. Only one is open-source, because the other contains way too much application specific code to be made generic.
 
 ## See Also
 
