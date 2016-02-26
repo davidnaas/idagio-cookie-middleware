@@ -1,0 +1,27 @@
+{
+  "name": "@idagio/cookie-middleware",
+  "version": "1.0.0",
+  "description": "Middleware for dealing with the parsing and serialization of cookies for Node.js / Express.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IDAGIO/idagio-cookie-middleware.git"
+  },
+  "keywords": [
+    "cookies",
+    "cookie",
+    "middleware",
+    "express"
+  ],
+  "author": "IDAGIO GmbH (https://www.idagio.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IDAGIO/idagio-cookie-middleware/issues"
+  },
+  "homepage": "https://github.com/IDAGIO/idagio-cookie-middleware#readme",
+  "dependencies": {
+    "cookie": "^0.2.3",
+    "is-secure": "^1.0.0",
+    "on-headers": "^1.0.1"
+  }
+}
