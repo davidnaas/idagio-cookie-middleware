@@ -63,6 +63,45 @@ app.get('/', function(request, response) {
 app.listen(3000);
 ```
 
+### With asynchronicity:
+
+```js
+var express = require('express');
+var Cookies = require('@idagio/cookie-middleware');
+var Redis = Redis.createClient(process.env.REDIS_URL);
+
+var app = express();
+
+app.use(Cookies.middleware);
+app.use(function(request, response, next) {
+  var sessionId = request.cookies.get('my_app_session');
+
+  if (!sessionId) {
+    return next();
+  }
+
+  redis.get('session:'+sessionId, function(err, data) {
+    if (!err && data) {
+      request.session = data;
+    }
+
+    next();
+  });
+});
+
+app.get('/', function(request, response) {
+  response.writeHead(200);
+
+  if (request.session) {
+    response.end('You have a session!');
+  } else {
+    response.end('You do not have a session :(')
+  }
+});
+
+app.listen(3000);
+```
+
 ## API
 
 ### `new Cookie(request, response)`
