@@ -104,28 +104,28 @@ app.listen(3000);
 
 ## API
 
-### `new Cookie(request, response)`
+### `new Cookies(request, response)`
 
 Creates an instance of the cookie handler using Node.js [`request`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) and [`response`](https://nodejs.org/api/http.html#http_class_http_serverresponse) objects.
 
 This will override `response.end` via the [js-http onHeaders](https://github.com/jshttp/on-headers) module.
 
-Cookie parsing is delegated to the [js-http cookie](https://github.com/jshttp/cookie) module, however, this only happens when you use the `Cookie#get` method to retrieve a cookie's value.
+Cookie parsing is delegated to the [js-http cookie](https://github.com/jshttp/cookie) module, however, this only happens when you use the `Cookies#get` method to retrieve a cookie's value.
 
-#### `Cookie.prototype.get(name)`
+#### `Cookies.prototype.get(name)`
 
 Parses the cookies and returns the cookie with the given name as a String.
 
-#### `Cookie.prototype.set(name, value, [ options = {}, [ override=false ] ])`
+#### `Cookies.prototype.set(name, value, [ options = {}, [ override=false ] ])`
 
 Sets a cookie to be sent as part of the Set-Cookie header. The `options` object is passed directly into the `cookie` modules' serialize function. For the various available options, see that [module's documentation](https://github.com/jshttp/cookie#more). The `override` parameter allows you to clear any other value that may have been set for a cookie with the given name.
 
 Calling `set` multiple times with the same name will result in multiple cookies all with the same name.
 
-#### `Cookie.prototype.unset(name)`
+#### `Cookies.prototype.unset(name)`
 
-Shorthand for `Cookie.prototype.set(name, '', { expires: new Date(0) }, true);`.
+Shorthand for `Cookies.prototype.set(name, '', { expires: new Date(0) }, true);`.
 
-### `Cookie.middleware(request, response, next)`
+### `Cookies.middleware(request, response, next)`
 
-Standard connect / express.js middleware. Creates an instance of Cookie stored as `request.cookies`.
+Standard connect / express.js middleware. Creates an instance of `Cookies` stored as `request.cookies`.
