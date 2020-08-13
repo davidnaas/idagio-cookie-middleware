@@ -1,6 +1,6 @@
 {
   "name": "@idagio/cookie-middleware",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Middleware for dealing with the parsing and serialization of cookies for Node.js / Express.js",
   "main": "index.js",
   "repository": {
